@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yashwanth Kasarabada | Data Professional Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!--styling-->
+    <style>
+        @keyframes pulse {
+         0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
+         70% { box-shadow: 0 0 0 15px rgba(14, 165, 233, 0); }
+         100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+        }
+
+        .btn-primary {
+          animation: pulse 2s infinite;
+        }
+        
+        .btn-primary:hover {
+          animation: none;
+        }
+    
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #1e293b;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        }
+        
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(30, 41, 59, 0.95);
+            color: var(--light);
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(8px);
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70px;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary);
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 100px auto 50px auto;
+            padding: 0 5%;
+        }
+        
+        section {
+            margin-bottom: 80px;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 70%;
+            width: 5px;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        /* Home Section */
+        #home {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #home::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14,165,233,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
+        
+        .home-content {
+            max-width: 800px;
+        }
+        
+        #home h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.2;
+        }
+        
+        #home h1 span {
+            color: var(--primary);
+        }
+        
+        #home p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--secondary);
+        }
+        
+        .home-highlight {
+            background-color: rgba(14, 165, 233, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        /* About Section */
+        #about {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .about-text {
+            padding-right: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .about-details {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 10px;
+        }
+        
+        .about-details h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .detail-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .detail-content h4 {
+            margin: 0;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+        
+        .detail-content p, .detail-content a {
+            margin: 5px 0 0 0;
+            color: var(--gray);
+            text-decoration: none;
+        }
+        
+        .detail-content a:hover {
+            color: var(--primary);
+        }
+        
+        /* Experience Section */
+        #experience {
+            position: relative;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        .timeline-badge {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 40px;
+            background-color: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-card {
+            position: relative;
+            margin-left: 80px;
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .timeline-card-header {
+            margin-bottom: 15px;
+        }
+        
+        .timeline-card-header h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .timeline-card-header h4 {
+            margin: 0;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 3px 10px;
+            background: var(--light-gray);
+            color: var(--gray);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 10px 0;
+        }
+        
+        .timeline-card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        
+        .timeline-card ul li {
+            margin-bottom: 8px;
+            color: var(--gray);
+        }
+        
+        /* Education Section */
+        #education {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .education-card {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .education-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .education-card h4 {
+            margin: 10px 0;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+        
+        .education-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        /* Projects Section */
+        #projects .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .project-image {
+            height: 200px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-content h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .tech-tag {
+            background: var(--light-gray);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links a {
+            color: var(--primary);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .project-links a i {
+            margin-right: 5px;
+        }
+        
+        /* Skills Section */
+        #skills {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            margin-bottom: 30px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+            color: var(--secondary);
+        }
+        
+        .skill-level {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: var(--light-gray);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--secondary);
+            padding: 60px 40px;
+            border-radius: 15px;
+            color: white;
+        }
+        
+        #contact .section-title {
+            color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 6px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-family: inherit;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-text {
+                padding-right: 0;
+            }
+            
+            #home h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .container {
+                margin-top: 80px;
+            }
+            
+            #home {
+                min-height: auto;
+                padding: 80px 0 50px 0;
+            }
+            
+            #home h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-badge {
+                left: 20px;
+            }
+            
+            .timeline-card {
+                margin-left: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::before {
+                display: none;
+            }
+            
+            .timeline-badge {
+                display: none;
+            }
+            
+            .timeline-card {
+                margin-left: 0;
+            }
+        }
+        /* Profile Photo Styles */
+            .profile-photo {
+                width: 290px;
+                height: 290px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 5px solid white;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+                margin-left: 40px;
+            }
+            
+            .home-content {
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            }
+            
+            /* Responsive adjustments for photo */
+            @media (max-width: 768px) {
+                .home-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+                
+                .profile-photo {
+                    margin-left: 0;
+                    margin-bottom: 30px;
+                    width: 150px;
+                    height: 150px;
+                }
+                
+                .cta-buttons {
+                    justify-content: center;
+                }
+            }
+            .btn-resume {
+                background: var(--primary); /* Same blue color */
+                color: white;
+                padding: 12px 24px;
+                border-radius: 6px;
+                font-weight: 600;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+                margin: 0 10px;
+            }
+            
+            /* Hover effect matching Contact Me button */
+            .btn-resume:hover {
+                background: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+            }
+            
+            /* Icon spacing */
+            .btn-resume i {
+                margin-right: 8px;
+            }
+            
+            /* Mobile responsiveness */
+            @media (max-width: 768px) {
+                .cta-buttons .btn-resume {
+                    margin: 10px 0;
+                }
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+        <ul>
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+            <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+            <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--sections-->
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="home-content">
+                <div>
+                    <h1>Yashwanth Sai <span>Kasarabada</span></h1>
+                    <p>
+                        Ambitious <span class="home-highlight">data professional</span> with expertise in <strong>SQL, R, Python, and Machine Learning</strong>.
+                        Proven experience in <span class="home-highlight">data visualization</span> using Power BI and <span class="home-highlight">predictive analytics</span> model development.
+                        Skilled in transforming complex data into <span class="home-highlight">actionable insights</span> to solve real-world problems.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="https://drive.google.com/file/d/1nKjyxnCcL7xk8gdE3XXh1K_IVvCjelJX/view?usp=drivesdk" class="btn btn-resume"><i class="fas fa-file-pdf"></i> View Resume</a>
+                        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                    </div>
+                </div>
+                <img src="yash.jpg" alt="Yashwanth Sai Kasarabada" class="profile-photo">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate data professional currently pursuing my B.Tech at IIIT Manipur. 
+                        With multiple internships in data analysis and AI, I've developed strong skills 
+                        in transforming raw data into meaningful insights.
+                    </p>
+                    <p>
+                        My approach combines technical expertise with business acumen to deliver 
+                        data-driven solutions that create real impact. I'm particularly interested 
+                        in machine learning applications and data visualization techniques.
+                    </p>
+                    <p>
+                        When I'm not working with data, you can find me exploring new technologies, 
+                        contributing to open-source projects, or learning about the latest 
+                        advancements in AI and data science.
+                    </p>
+                </div>
+                <div class="about-details">
+                    <h3>Personal Details</h3>
+                    <div class="detail-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="detail-content">
+                            <h4>Email</h4>
+                            <a href="mailto:yashwanthsaikasarabada@gmail.com">yashwanthsaikasarabada@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="detail-content">
+                            <h4>Phone</h4>
+                            <a href="tel:+919366082494">+91 9366082494</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="detail-content">
+                            <h4>Location</h4>
+                            <p>Guntur, Andhra Pradesh, India</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-link"></i>
+                        <div class="detail-content">
+                            <h4>Connect</h4>
+                            <div style="display: flex; gap: 15px; margin-top: 5px;">
+                                <a href="https://github.com/yashhackz360" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/yashwanth-kasarabada-ba4265258/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <!-- Infosys Springboard -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <h3>Data Analyst Intern</h3>
+                            <h4>Infosys Springboard (Online)</h4>
+                            <div class="timeline-date">Nov 2024 – Feb 2025</div>
+                        </div>
+                        <ul>
+                            <li>Spearheaded IndiaCityGDP, a comprehensive urban economic metrics visualization using Pandas and NumPy for 50+ cities.</li>
+                            <li>Constructed 5 interactive dashboards with Power BI and Streamlit to display economic metrics.</li>
+                            <li>Acquired and refined 100,000+ data points from government sources, analyzing them with Python to uncover trends.</li>
+                            <li>Designed an AI chatbot for user queries and integrated all components into a multi-page Streamlit web application.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- CDAC Noida -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <h3>Cyber Security Intern</h3>
+                            <h4>Centre for Development of Advanced Computing (CDAC), Noida (Online)</h4>
+                            <div class="timeline-date">May 2024 – Jul 2024</div>
+                        </div>
+                        <ul>
+                            <li>Pioneered a Jigsaw ransomware detection mechanism using 2+ virtual machines (VMs).</li>
+                            <li>Devised process monitoring and decryption tools, analyzing 10+ ransomware behaviors.</li>
+                            <li>Identified 5+ key indicators of compromise (IoCs) and formulated mitigation strategies.</li>
+                            <li>Provided insights on ransomware lifecycle and prevention techniques.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Skolar Edtech -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <h3>Artificial Intelligence Intern</h3>
+                            <h4>Skolar Edtech (Remote)</h4>
+                            <div class="timeline-date">Aug 2023 – Nov 2023</div>
+                        </div>
+                        <ul>
+                            <li>Built a recommendation system, improving user engagement by 25%.</li>
+                            <li>Constructed a predictive model for student performance, increasing accuracy by 15%.</li>
+                            <li>Developed an NLP system, reducing data processing time by 30%.</li>
+                            <li>Conducted A/B testing to validate the effectiveness of AI-driven educational tools.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>B.Tech in Computer Science</h3>
+                    <h4>Indian Institute of Information Technology Manipur (IIIT Manipur)</h4>
+                    <p>Currently pursuing with a CGPA of 6.21 (Till 5th Semester)</p>
+                    <div class="education-meta">
+                        <span>2022 - 2026</span>
+                        <span>Imphal, India</span>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <h3>Intermediate (12th Grade)</h3>
+                    <h4>Jupiter Junior College (APBSE)</h4>
+                    <p>Percentage: 84%</p>
+                    <div class="education-meta">
+                        <span>2020 - 2022</span>
+                        <span>Andhra Pradesh, India</span>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <h3>High School (10th Grade)</h3>
+                    <h4>Little Flower English Medium School (ICSE)</h4>
+                    <p>Percentage: 82%</p>
+                    <div class="education-meta">
+                        <span>2010 - 2020</span>
+                        <span>Andhra Pradesh, India</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-train fa-3x"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Railway Accident Analytics: A Data-Driven Approach</h3>
+                        <div class="project-meta">
+                            <span>Mar 2025</span>
+                            <span>Guided by Dr. Sanasam Chanu Inunganbi</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <p>
+                            A comprehensive analysis platform for railway accident data with visualization dashboards 
+                            and predictive modeling capabilities.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/yashhackz360/Railway_Accdeint_Analytics_A_data_driven_AI_Approach" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-car fa-3x"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Wheels On Demand: A Car Leasing System</h3>
+                        <div class="project-meta">
+                            <span>Oct 2024</span>
+                            <span>Guided by Dr. Nongmeikapam Kishorjit Singh</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">OOP</span>
+                            <span class="tech-tag">File Handling</span>
+                        </div>
+                        <p>
+                            An automated car leasing system with dynamic pricing, vehicle tracking, and 
+                            management features for rental businesses.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/yashhackz360/Wheels-on-Demand-A-C-car-Leasing-System" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">R</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">C/C++</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Analysis & Visualization</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Pandas/Numpy</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Power BI</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Matplotlib/Seaborn</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Excel</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning & AI</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Scikit-Learn</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 78%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">TensorFlow</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">NLP</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Predictive Modeling</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Technologies</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Google Cloud</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 55%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Linux</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:yashwanthsaikasarabada@gmail.com">yashwanthsaikasarabada@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919366082494">+91 9366082494</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Guntur, Andhra Pradesh, India</span>
+                    </div>
+                    <h3 style="margin-top: 30px;">Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/yashhackz360" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/yashwanth-kasarabada-ba4265258/" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Yashwanth Sai Kasarabada. All rights reserved.</p>
+    </footer>
+
+    <!--Script-->
+
+    <script>
+
+typeWriter();
+        // Smooth scrolling for nav links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight active section in navigation
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('nav ul li a');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === `#${current}`) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Here you would typically send the form data to a server
+                    // For demo purposes, we'll just show an alert
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
