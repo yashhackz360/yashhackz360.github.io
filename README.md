@@ -1,6 +1,6 @@
 # Yashwanth Kasarabada - Personal Portfolio
 
-![Website Preview]([(website_preview.png)] <!-- Replace with your actual screenshot URL -->
+![UI](website_preview.png) <!-- Replace with your actual screenshot URL -->
 
 ## 🚀 Features
 
