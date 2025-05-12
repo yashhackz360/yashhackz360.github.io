@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yashwanth Kasarabada | Data Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        #particles-js {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Ensures it stays behind content */
+        background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        }
+
         :root {
             --primary: #0ea5e9;
             --primary-light: #e0f2fe;
@@ -790,10 +801,11 @@
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <!-- Navigation -->
     <header>
         <nav>
-            <a href="#" class="logo">Yashwanth's<span> Portfolio</span></a>
+            <a href="#" class="logo">Yashwanth's <span> Portfolio Website</span></a>
             <div class="nav-links">
                 <a href="#hero" class="active">Home</a>
                 <a href="#about">About</a>
@@ -1376,6 +1388,25 @@
 
         // Run on scroll
         window.addEventListener('scroll', animateOnScroll);
+        particlesJS("particles-js", {
+          "particles": {
+            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+            "color": { "value": "#0ea5e9" },
+            "shape": { "type": "circle" },
+            "opacity": { "value": 0.5, "random": true },
+            "size": { "value": 3, "random": true },
+            "line_linked": { "enable": true, "distance": 150, "color": "#0ea5e9", "opacity": 0.3, "width": 1 },
+            "move": { "enable": true, "speed": 2, "direction": "none", "random": true }
+          },
+          "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+              "onhover": { "enable": true, "mode": "repulse" },
+              "onclick": { "enable": true, "mode": "push" }
+            }
+          }
+        });
+        
     </script>
 </body>
 </html>
