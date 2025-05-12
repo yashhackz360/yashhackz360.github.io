@@ -1,6 +1,6 @@
 # Yashwanth Kasarabada - Personal Portfolio
 
-![Website Preview]([(https://yashhackz360.github.io/)]) <!-- Replace with your actual screenshot URL -->
+![Website Preview]([(website_preview.png)] <!-- Replace with your actual screenshot URL -->
 
 ## 🚀 Features
 
