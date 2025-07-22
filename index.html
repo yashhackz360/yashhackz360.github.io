@@ -14,21 +14,22 @@
         top: 0;
         left: 0;
         z-index: -1; /* Ensures it stays behind content */
-        background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        background: linear-gradient(135deg, #0b1120 0%, #1e293b 100%);
         }
 
         :root {
-            --primary: #0ea5e9;
-            --primary-light: #e0f2fe;
-            --primary-dark: #0369a1;
-            --secondary: #1e293b;
+            --primary: #38bdf8;
+            --primary-light: #0ea5e9;
+            --primary-dark: #0284c7;
+            --secondary: #e2e8f0;
             --light: #f8fafc;
             --dark: #0f172a;
-            --gray: #64748b;
-            --light-gray: #f1f5f9;
-            --bg-color: #ffffff;
-            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --hover-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --gray: #94a3b8;
+            --light-gray: #1e293b;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            --hover-shadow: 0 10px 15px rgba(56, 189, 248, 0.2);
         }
 
         * {
@@ -54,6 +55,7 @@
         h1, h2, h3, h4 {
             font-weight: 700;
             line-height: 1.2;
+            color: var(--light);
         }
 
         h1 {
@@ -113,7 +115,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: var(--card-shadow);
             transition: all 0.3s ease;
@@ -207,15 +209,22 @@
             width: 100%;
             max-width: 350px;
             border-radius: 50%;
-            border: 8px solid var(--primary-light);
+            border: 8px solid rgba(56, 189, 248, 0.2);
             box-shadow: var(--hover-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
         }
 
         .hero-highlight {
-            background-color: rgba(14, 165, 233, 0.1);
+            background-color: rgba(56, 189, 248, 0.2);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-weight: 500;
+            color: var(--primary);
         }
 
         .hero-cta {
@@ -236,14 +245,14 @@
 
         .btn-primary {
             background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
 
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
         }
 
         .btn-outline {
@@ -253,7 +262,7 @@
 
         .btn-outline:hover {
             background: var(--primary);
-            color: white;
+            color: var(--dark);
             transform: translateY(-3px);
         }
 
@@ -263,7 +272,7 @@
 
         /* About Section */
         #about {
-            background-color: var(--light-gray);
+            background-color: rgba(30, 41, 59, 0.5);
         }
 
         .about-content {
@@ -277,10 +286,16 @@
         }
 
         .about-details {
-            background: white;
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .about-details:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
 
         .detail-item {
@@ -318,14 +333,14 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: var(--light-gray);
-            color: var(--secondary);
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
             transition: all 0.3s ease;
         }
 
         .social-links a:hover {
             background: var(--primary);
-            color: white;
+            color: var(--dark);
             transform: translateY(-3px);
         }
 
@@ -367,7 +382,7 @@
             width: 20px;
             height: 20px;
             left: calc(50% - 10px);
-            background-color: white;
+            background-color: var(--card-bg);
             border: 3px solid var(--primary);
             border-radius: 50%;
             z-index: 1;
@@ -376,7 +391,7 @@
         .timeline-card {
             position: relative;
             width: calc(50% - 40px);
-            background: white;
+            background: var(--card-bg);
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: var(--card-shadow);
@@ -396,8 +411,8 @@
         .timeline-date {
             display: inline-block;
             padding: 0.3rem 0.8rem;
-            background: var(--light-gray);
-            color: var(--gray);
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
             border-radius: 20px;
             font-size: 0.8rem;
             margin-bottom: 1rem;
@@ -420,7 +435,7 @@
         }
 
         .education-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             padding: 1.5rem;
             box-shadow: var(--card-shadow);
@@ -452,7 +467,7 @@
         }
 
         .project-card {
-            background: white;
+            background: var(--card-bg);
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
@@ -466,15 +481,25 @@
 
         .project-image {
             height: 200px;
-            background: var(--light-gray);
+            background: rgba(56, 189, 248, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray);
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            background: rgba(56, 189, 248, 0.2);
         }
 
         .project-image i {
             font-size: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-image i {
+            transform: scale(1.1);
         }
 
         .project-content {
@@ -497,12 +522,18 @@
         }
 
         .tech-tag {
-            background: var(--light-gray);
-            color: var(--secondary);
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: var(--primary);
+            color: var(--dark);
         }
 
         .project-links a {
@@ -511,6 +542,11 @@
             display: inline-flex;
             align-items: center;
             margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: var(--light);
         }
 
         .project-links a i {
@@ -525,10 +561,16 @@
         }
 
         .skill-category {
-            background: white;
+            background: var(--card-bg);
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
 
         .skill-category h3 {
@@ -557,7 +599,7 @@
 
         .skill-bar {
             height: 8px;
-            background: var(--light-gray);
+            background: rgba(56, 189, 248, 0.1);
             border-radius: 4px;
             overflow: hidden;
         }
@@ -566,11 +608,12 @@
             height: 100%;
             background: var(--primary);
             border-radius: 4px;
+            transition: width 1s ease-in-out;
         }
 
         /* Contact Section */
         #contact {
-            background: var(--secondary);
+            background: var(--light-gray);
             color: white;
         }
 
@@ -652,6 +695,14 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 2px var(--primary);
         }
 
         .contact-form input::placeholder,
@@ -666,7 +717,7 @@
 
         .contact-form button {
             background: var(--primary);
-            color: white;
+            color: var(--dark);
             border: none;
             padding: 0.8rem 2rem;
             border-radius: 6px;
@@ -698,6 +749,12 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         section {
@@ -734,7 +791,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: white;
+                background: var(--card-bg);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -912,6 +969,42 @@
         <div class="container">
             <h2>Work Experience</h2>
             <div class="timeline">
+                <!-- Data Engineering Intern -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <h3>Data Engineering Intern</h3>
+                            <h4>HiFX IT & Media Services Pvt. Ltd. (Kochi, India)</h4>
+                            <div class="timeline-date">May 2025 – Jul 2025</div>
+                        </div>
+                        <ul>
+                            <li>Developed a Proof of Concept to modernize the data infrastructure by building an open-source, cloud-native lakehouse using Apache Iceberg, MinIO, Apache Spark, Parquet, and StarRocks.</li>
+                            <li>Explored a weather dataset using the lakehouse setup with MinIO object storage and Apache Spark for processing; benchmarked query performance between StarRocks and a Presto cluster.</li>
+                            <li>Built secure RESTful APIs with Flask, JWT authentication, and MySQL to facilitate data access and backend operations.</li>
+                            <li>Created an AI-powered semantic search engine using SentenceTransformers and Pinecone for intelligent vector-based data retrieval.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Data Science Intern -->
+                <div class="timeline-item">
+                    <div class="timeline-badge"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-card-header">
+                            <h3>Data Science Intern</h3>
+                            <h4>Celebal Technologies (Remote)</h4>
+                            <div class="timeline-date">May 2025 – Jul 2025</div>
+                        </div>
+                        <ul>
+                            <li>Built a house price prediction pipeline: data cleaning, feature engineering, ML (Random Forest, XGBoost).</li>
+                            <li>Conducted EDA using Pandas, Matplotlib, and Seaborn.</li>
+                            <li>Deployed ML models as Streamlit web apps for real-time inference.</li>
+                            <li>Created a RAG chatbot with FAISS and Hugging Face APIs.</li>
+                        </ul>
+                    </div>
+                </div>
+                
                 <!-- Infosys Springboard -->
                 <div class="timeline-item">
                     <div class="timeline-badge"></div>
@@ -1010,6 +1103,38 @@
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
+                  <!-- New Semantic Search Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Semantic Search with Pinecone Vector DB</h3>
+                    <div class="project-meta">
+                        <span>Jul 2025</span>
+                        <span>Personal Project</span>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Sentence Transformers</span>
+                        <span class="tech-tag">Pinecone</span>
+                        <span class="tech-tag">Hugging Face</span>
+                        <span class="tech-tag">FAISS</span>
+                    </div>
+                    <p>
+                        A scalable semantic search system leveraging vector embeddings for intelligent information retrieval,
+                        combining multiple search techniques for optimal results.
+                    </p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">
+                            <i class="https://github.com/yashhackz360/Semantic_Search_pinecone_vector_db"></i> View Code
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-train"></i>
@@ -1113,12 +1238,21 @@
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Bash</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
                             <div class="skill-progress" style="width: 70%"></div>
                         </div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Data Analysis & Visualization</h3>
+                    <h3>Data Analytics & Visualization</h3>
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Pandas/Numpy</span>
@@ -1143,7 +1277,7 @@
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1155,25 +1289,88 @@
                             <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Tableau</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Plotly</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Stata</span>
+                            <span class="skill-level">Basic</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="skill-category">
                     <h3>Machine Learning & AI</h3>
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Scikit-Learn</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">XGBoost</span>
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 78%"></div>
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">TensorFlow</span>
-                            <span class="skill-level">Basic</span>
+                            <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 60%"></div>
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Hugging Face</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">FAISS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">SentenceTransformers</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1182,12 +1379,78 @@
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
+                            <div class="skill-progress" style="width: 75%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
                             <span class="skill-name">Predictive Modeling</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Engineering & Cloud</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Apache Spark</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Apache Iceberg</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MinIO</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">StarRocks</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">GCP (BigQuery, Vertex AI)</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Docker</span>
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
@@ -1196,23 +1459,71 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Other Technologies</h3>
+                    <h3>Web & API Development</h3>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">AWS</span>
-                            <span class="skill-level">Basic</span>
+                            <span class="skill-name">Flask</span>
+                            <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 50%"></div>
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span class="skill-name">Google Cloud</span>
-                            <span class="skill-level">Basic</span>
+                            <span class="skill-name">Streamlit</span>
+                            <span class="skill-level">Advanced</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 55%"></div>
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">REST APIs</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">JWT</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Vector Search & Other</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Pinecone</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">FAISS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git/GitHub</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
                         </div>
                     </div>
                     <div class="skill-item">
@@ -1221,16 +1532,7 @@
                             <span class="skill-level">Intermediate</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Git</span>
-                            <span class="skill-level">Intermediate</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
                     </div>
                 </div>
@@ -1388,25 +1690,96 @@
 
         // Run on scroll
         window.addEventListener('scroll', animateOnScroll);
+        
+        // Particles.js configuration
         particlesJS("particles-js", {
           "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#0ea5e9" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": true },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#0ea5e9", "opacity": 0.3, "width": 1 },
-            "move": { "enable": true, "speed": 2, "direction": "none", "random": true }
+            "number": { 
+              "value": 80, 
+              "density": { 
+                "enable": true, 
+                "value_area": 800 
+              } 
+            },
+            "color": { 
+              "value": "#38bdf8" 
+            },
+            "shape": { 
+              "type": "circle" 
+            },
+            "opacity": { 
+              "value": 0.5, 
+              "random": true 
+            },
+            "size": { 
+              "value": 3, 
+              "random": true 
+            },
+            "line_linked": { 
+              "enable": true, 
+              "distance": 150, 
+              "color": "#38bdf8", 
+              "opacity": 0.3, 
+              "width": 1 
+            },
+            "move": { 
+              "enable": true, 
+              "speed": 2, 
+              "direction": "none", 
+              "random": true,
+              "straight": false,
+              "out_mode": "out",
+              "bounce": false
+            }
           },
           "interactivity": {
             "detect_on": "canvas",
             "events": {
-              "onhover": { "enable": true, "mode": "repulse" },
-              "onclick": { "enable": true, "mode": "push" }
+              "onhover": { 
+                "enable": true, 
+                "mode": "repulse" 
+              },
+              "onclick": { 
+                "enable": true, 
+                "mode": "push" 
+              }
+            },
+            "modes": {
+              "repulse": {
+                "distance": 100,
+                "duration": 0.4
+              },
+              "push": {
+                "particles_nb": 4
+              }
             }
           }
         });
         
+        // Add hover animations to buttons
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-3px)';
+                btn.style.boxShadow = '0 10px 20px rgba(56, 189, 248, 0.3)';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = '0 4px 15px rgba(56, 189, 248, 0.3)';
+            });
+        });
+        
+        // Add pulse animation to hero image on hover
+        const heroImage = document.querySelector('.hero-image img');
+        if (heroImage) {
+            heroImage.addEventListener('mouseenter', () => {
+                heroImage.style.animation = 'pulse 2s infinite';
+            });
+            
+            heroImage.addEventListener('mouseleave', () => {
+                heroImage.style.animation = 'none';
+            });
+        }
     </script>
 </body>
 </html>
