@@ -44,9 +44,9 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 60px;
+            padding: 0 40px;
         }
 
 header {
@@ -115,8 +115,8 @@ header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 60px;
-            max-width: 1200px;
+            padding: 14px 40px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
@@ -124,7 +124,7 @@ header {
 
         .logo {
             font-family: var(--font-display);
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 700;
             background: linear-gradient(135deg, #ffffff 0%, rgba(201, 169, 97, 1) 100%);
             -webkit-background-clip: text;
@@ -132,7 +132,7 @@ header {
             background-clip: text;
             letter-spacing: -0.03em;
             position: relative;
-            padding: 12px 24px;
+            padding: 8px 18px;
             border-radius: 50px;
             transition: all 0.4s ease;
         }
@@ -167,7 +167,7 @@ header {
         }
 
         .nav-links a {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 500;
             color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
@@ -175,7 +175,7 @@ header {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             text-transform: uppercase;
-            padding: 12px 24px;
+            padding: 9px 16px;
             border-radius: 30px;
             display: inline-block;
             overflow: hidden;
@@ -283,10 +283,11 @@ header {
         }
 
         .hero-content {
-            max-width: 900px;
+            width: 100%;
+            max-width: 800px;
             position: relative;
             z-index: 1;
-            padding: 120px 0 80px;
+            padding: 110px 0 70px;
         }
 
         .hero-label {
@@ -307,11 +308,11 @@ header {
 
         .hero h1 {
             font-family: var(--font-display);
-            font-size: 72px;
+            font-size: clamp(36px, 5vw, 64px);
             font-weight: 700;
             color: var(--color-midnight);
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: -0.03em;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards 0.4s;
@@ -319,21 +320,21 @@ header {
 
         .hero-tagline {
             font-family: var(--font-display);
-            font-size: 28px;
+            font-size: clamp(18px, 2.2vw, 24px);
             font-weight: 400;
             color: var(--color-text-medium);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-style: italic;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards 0.6s;
         }
 
         .hero-description {
-            font-size: 19px;
+            font-size: clamp(15px, 1.4vw, 17px);
             line-height: 1.8;
             color: var(--color-text-medium);
-            margin-bottom: 50px;
-            max-width: 700px;
+            margin-bottom: 40px;
+            max-width: 620px;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards 0.8s;
         }
@@ -992,11 +993,11 @@ header {
 
         @media (max-width: 1024px) {
             .container {
-                padding: 0 40px;
+                padding: 0 30px;
             }
 
             nav {
-                padding: 24px 40px;
+                padding: 12px 30px;
             }
 
             .hero h1 {
@@ -1019,11 +1020,11 @@ header {
 
         @media (max-width: 768px) {
             .container {
-                padding: 0 25px;
+                padding: 0 20px;
             }
 
             nav {
-                padding: 20px 25px;
+                padding: 12px 20px;
             }
 
             .mobile-menu-toggle {
