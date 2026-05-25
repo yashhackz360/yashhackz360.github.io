@@ -338,6 +338,37 @@ header {
             animation: fadeInUp 0.8s ease forwards 0.8s;
         }
 
+        .btn-resume {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-copper));
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(201, 169, 97, 0.3);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 0.9s;
+        }
+
+        .btn-resume:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(201, 169, 97, 0.45);
+            background: linear-gradient(135deg, #d4b56a, var(--color-gold));
+        }
+
+        .btn-resume svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
         .hero-stats {
             display: flex;
             gap: 60px;
@@ -1136,17 +1167,19 @@ header {
                 <h1>Rajasekhar Kasarabada</h1>
                 <p class="hero-tagline">Architecting financial clarity in complex landscapes</p>
                 <p class="hero-description">Two decades of transforming financial operations across startups, mid-market enterprises, and established institutions. Specialized in restructuring, scaling finance functions, and delivering sustainable profitability in challenging environments.</p>
+                <a href="https://drive.google.com/file/d/1A5c-LDJaqqDmYWtHAGZ_oEOzK7YD3tsJ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn-resume">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                    </svg>
+                    View Resume
+                </a>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Years Experience</div>
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years in Accounting</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">10+</div>
-                        <div class="stat-label">Branches Managed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12+</div>
                         <div class="stat-label">Years QuickBooks</div>
                     </div>
                 </div>
