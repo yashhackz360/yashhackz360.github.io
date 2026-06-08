@@ -59,8 +59,9 @@
             --space-section-sm: 80px;
 
             /* Container */
-            --container-max: 1100px;
+            --container-max: 1280px;
             --container-pad: 48px;
+            --nav-pad: 40px;
         }
 
         /* ============================================================
@@ -175,9 +176,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px var(--container-pad);
-            max-width: var(--container-max);
-            margin: 0 auto;
+            /* Full viewport width — logo true far-left, links true far-right */
+            padding: 16px var(--nav-pad);
+            width: 100%;
             position: relative;
             z-index: 1;
             gap: var(--space-lg);
@@ -1306,7 +1307,8 @@
         ============================================================ */
         @media (min-width: 1280px) {
             :root {
-                --container-pad: 56px;
+                --container-pad: 64px;
+                --nav-pad: 56px;
             }
 
             .hero h1 {
@@ -1324,6 +1326,7 @@
         @media (max-width: 1024px) {
             :root {
                 --container-pad: 32px;
+                --nav-pad: 28px;
                 --space-section-xl: 110px;
                 --space-section-lg: 96px;
                 --space-section-md: 80px;
@@ -1331,7 +1334,7 @@
             }
 
             nav {
-                padding: 14px var(--container-pad);
+                padding: 14px var(--nav-pad);
                 gap: var(--space-md);
             }
 
@@ -1363,6 +1366,7 @@
         @media (max-width: 768px) {
             :root {
                 --container-pad: 20px;
+                --nav-pad: 18px;
                 --space-section-xl: 88px;
                 --space-section-lg: 72px;
                 --space-section-md: 64px;
@@ -1370,7 +1374,7 @@
             }
 
             nav {
-                padding: 12px var(--container-pad);
+                padding: 12px var(--nav-pad);
                 gap: 0;
             }
 
